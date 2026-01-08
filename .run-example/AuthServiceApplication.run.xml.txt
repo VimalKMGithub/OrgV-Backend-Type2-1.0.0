@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="AuthServiceApplication" type="SpringBootApplicationConfigurationType"
+                   factoryName="Spring Boot" nameIsGenerated="true">
+        <envs>
+            <env name="GITHUB_CLIENT_ID" value="github_client_id"/>
+            <env name="GITHUB_CLIENT_SECRET" value="github_client_secret"/>
+            <env name="GOOGLE_CLIENT_ID"
+                 value="google_client_id"/>
+            <env name="GOOGLE_CLIENT_SECRET" value="google_client_secret"/>
+        </envs>
+        <module name="auth-service"/>
+        <option name="SPRING_BOOT_MAIN_CLASS" value="org.v.auth.service.AuthServiceApplication"/>
+        <method v="2">
+            <option name="Make" enabled="true"/>
+        </method>
+    </configuration>
+</component>

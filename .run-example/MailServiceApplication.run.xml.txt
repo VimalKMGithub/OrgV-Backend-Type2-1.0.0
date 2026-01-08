@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="MailServiceApplication" type="SpringBootApplicationConfigurationType"
+                   factoryName="Spring Boot" nameIsGenerated="true">
+        <envs>
+            <env name="MAIL_PASSWORD" value="mail_app_password"/>
+            <env name="MAIL_USERNAME" value="mail@example.com"/>
+        </envs>
+        <module name="mail-service"/>
+        <option name="SPRING_BOOT_MAIN_CLASS" value="org.v.mail.service.MailServiceApplication"/>
+        <method v="2">
+            <option name="Make" enabled="true"/>
+        </method>
+    </configuration>
+</component>

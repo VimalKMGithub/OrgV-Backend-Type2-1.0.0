@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="All" type="CompoundRunConfigurationType">
+        <toRun name="AdminServiceApplication" type="SpringBootApplicationConfigurationType"/>
+        <toRun name="AuthServiceApplication" type="SpringBootApplicationConfigurationType"/>
+        <toRun name="DbServiceApplication" type="SpringBootApplicationConfigurationType"/>
+        <toRun name="GatewayServiceApplication" type="SpringBootApplicationConfigurationType"/>
+        <toRun name="MailServiceApplication" type="SpringBootApplicationConfigurationType"/>
+        <toRun name="ServiceRegistryApplication" type="SpringBootApplicationConfigurationType"/>
+        <toRun name="UserServiceApplication" type="SpringBootApplicationConfigurationType"/>
+        <method v="2"/>
+    </configuration>
+</component>
