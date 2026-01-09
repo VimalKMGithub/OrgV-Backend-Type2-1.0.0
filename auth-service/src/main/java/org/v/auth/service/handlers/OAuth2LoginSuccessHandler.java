@@ -42,7 +42,7 @@ public class OAuth2LoginSuccessHandler implements AuthenticationSuccessHandler {
     private final AesStaticEncryptorDecryptor aesStaticEncryptorDecryptor;
     private final AesRandomEncryptorDecryptor aesRandomEncryptorDecryptor;
     private final PasswordEncoder passwordEncoder;
-    private static final Set<String> ALLOWED_REDIRECT_ORIGINS = Set.of("http://localhost:9225", "http://localhost:9250", "http://localhost:9275");
+    private static final Set<String> ALLOWED_REDIRECT_ORIGINS = Set.of("http://localhost:9225", "http://localhost:9250", "https://localhost");
     private static final Set<String> ALLOWED_CALLBACK_PATHS = Set.of("/oauth2/callback");
 
     @Override
