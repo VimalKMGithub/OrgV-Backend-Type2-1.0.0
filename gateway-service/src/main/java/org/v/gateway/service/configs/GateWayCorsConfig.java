@@ -12,7 +12,7 @@ public class GateWayCorsConfig {
     @Bean
     public UrlBasedCorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("http://localhost:9225", "http://localhost:9250", "http://localhost:9275"));
+        config.setAllowedOrigins(List.of("http://localhost:9225", "http://localhost:9250", "https://localhost"));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of(
                 "Authorization",

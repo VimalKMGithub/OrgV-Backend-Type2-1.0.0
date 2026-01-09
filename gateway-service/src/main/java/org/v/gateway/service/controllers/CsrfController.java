@@ -16,9 +16,9 @@ public class CsrfController {
     public Mono<Void> csrf(ServerWebExchange exchange) {
         ResponseCookie cookie = ResponseCookie.from(CSRF_TOKEN_COOKIE, UUID.randomUUID().toString())
                 .path("/")
-                .sameSite("Lax")
+                .sameSite("Strict")
                 .httpOnly(false)
-                // .secure(true) // enable when HTTPS
+                .secure(true) // enable when HTTPS
                 .build();
         exchange.getResponse().addCookie(cookie);
         return Mono.empty();

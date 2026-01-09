@@ -150,7 +150,7 @@ public class OAuth2LoginSuccessHandler implements AuthenticationSuccessHandler {
                     response,
                     ACCESS_TOKEN_COOKIE,
                     (String) tokens.get("access_token"),
-                    "Lax",
+                    "Strict",
                     "/",
                     ACCESS_TOKEN_EXPIRES_IN_SECONDS
             );
@@ -158,15 +158,15 @@ public class OAuth2LoginSuccessHandler implements AuthenticationSuccessHandler {
                     response,
                     REFRESH_TOKEN_COOKIE,
                     (String) tokens.get("refresh_token"),
-                    "Lax",
-                    "/auth-service/",
+                    "Strict",
+                    "/",
                     REFRESH_TOKEN_EXPIRES_IN_SECONDS
             );
             response.sendRedirect(frontendRedirectUri);
         } catch (Exception ex) {
             response.sendRedirect(frontendRedirectUri + "?error=" + URLEncoder.encode(ex.getMessage(), StandardCharsets.UTF_8));
         } finally {
-            removeHttpOnlyCookie(response, X_DEVICE_ID_HEADER, "Lax", "/");
+            removeHttpOnlyCookie(response, X_DEVICE_ID_HEADER, "Strict", "/");
         }
     }
 

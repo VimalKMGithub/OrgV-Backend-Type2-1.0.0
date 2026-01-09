@@ -117,7 +117,7 @@ public class AuthService {
                 response,
                 ACCESS_TOKEN_COOKIE,
                 (String) tokens.get("access_token"),
-                "Lax",
+                "Strict",
                 "/",
                 ACCESS_TOKEN_EXPIRES_IN_SECONDS
         );
@@ -125,8 +125,8 @@ public class AuthService {
                 response,
                 REFRESH_TOKEN_COOKIE,
                 (String) tokens.get("refresh_token"),
-                "Lax",
-                "/auth-service/",
+                "Strict",
+                "/",
                 REFRESH_TOKEN_EXPIRES_IN_SECONDS
         );
         return Map.of("message", "Login successful");
@@ -184,7 +184,13 @@ public class AuthService {
         removeHttpOnlyCookie(
                 response,
                 ACCESS_TOKEN_COOKIE,
-                "Lax",
+                "Strict",
+                "/"
+        );
+        removeHttpOnlyCookie(
+                response,
+                REFRESH_TOKEN_COOKIE,
+                "Strict",
                 "/"
         );
         return Map.of("message", "Logout successful");
@@ -200,14 +206,14 @@ public class AuthService {
             removeHttpOnlyCookie(
                     response,
                     ACCESS_TOKEN_COOKIE,
-                    "Lax",
+                    "Strict",
                     "/"
             );
             removeHttpOnlyCookie(
                     response,
                     REFRESH_TOKEN_COOKIE,
-                    "Lax",
-                    "/auth-service/"
+                    "Strict",
+                    "/"
             );
         }
         return Map.of("message", "Logout from devices successful");
@@ -220,14 +226,14 @@ public class AuthService {
         removeHttpOnlyCookie(
                 response,
                 ACCESS_TOKEN_COOKIE,
-                "Lax",
+                "Strict",
                 "/"
         );
         removeHttpOnlyCookie(
                 response,
                 REFRESH_TOKEN_COOKIE,
-                "Lax",
-                "/auth-service/"
+                "Strict",
+                "/"
         );
         return Map.of("message", "Logout from all devices successful");
     }
@@ -244,7 +250,7 @@ public class AuthService {
                 response,
                 ACCESS_TOKEN_COOKIE,
                 (String) tokens.get("access_token"),
-                "Lax",
+                "Strict",
                 "/",
                 ACCESS_TOKEN_EXPIRES_IN_SECONDS
         );
@@ -252,8 +258,8 @@ public class AuthService {
                 response,
                 REFRESH_TOKEN_COOKIE,
                 (String) tokens.get("refresh_token"),
-                "Lax",
-                "/auth-service/",
+                "Strict",
+                "/",
                 REFRESH_TOKEN_EXPIRES_IN_SECONDS
         );
         return Map.of("message", "Access token refreshed successfully");
@@ -266,7 +272,7 @@ public class AuthService {
         removeHttpOnlyCookie(
                 response,
                 ACCESS_TOKEN_COOKIE,
-                "Lax",
+                "Strict",
                 "/"
         );
         return Map.of("message", "Access token revoked successfully");
@@ -289,8 +295,8 @@ public class AuthService {
         removeHttpOnlyCookie(
                 response,
                 REFRESH_TOKEN_COOKIE,
-                "Lax",
-                "/auth-service/"
+                "Strict",
+                "/"
         );
         return Map.of("message", "Refresh token revoked successfully");
     }
@@ -516,14 +522,14 @@ public class AuthService {
                 removeHttpOnlyCookie(
                         response,
                         ACCESS_TOKEN_COOKIE,
-                        "Lax",
+                        "Strict",
                         "/"
                 );
                 removeHttpOnlyCookie(
                         response,
                         REFRESH_TOKEN_COOKIE,
-                        "Lax",
-                        "/auth-service/"
+                        "Strict",
+                        "/"
                 );
                 dbServiceClient.updateUser(user);
                 emailConfirmationOnMfaToggle(user, EMAIL_MFA, toggle);
@@ -576,14 +582,14 @@ public class AuthService {
                 removeHttpOnlyCookie(
                         response,
                         ACCESS_TOKEN_COOKIE,
-                        "Lax",
+                        "Strict",
                         "/"
                 );
                 removeHttpOnlyCookie(
                         response,
                         REFRESH_TOKEN_COOKIE,
-                        "Lax",
-                        "/auth-service/"
+                        "Strict",
+                        "/"
                 );
                 dbServiceClient.updateUser(user);
                 emailConfirmationOnMfaToggle(user, AUTHENTICATOR_APP_MFA, true);
@@ -612,14 +618,14 @@ public class AuthService {
         removeHttpOnlyCookie(
                 response,
                 ACCESS_TOKEN_COOKIE,
-                "Lax",
+                "Strict",
                 "/"
         );
         removeHttpOnlyCookie(
                 response,
                 REFRESH_TOKEN_COOKIE,
-                "Lax",
-                "/auth-service/"
+                "Strict",
+                "/"
         );
         dbServiceClient.updateUser(user);
         emailConfirmationOnMfaToggle(user, AUTHENTICATOR_APP_MFA, false);
@@ -766,7 +772,7 @@ public class AuthService {
                         response,
                         ACCESS_TOKEN_COOKIE,
                         (String) tokens.get("access_token"),
-                        "Lax",
+                        "Strict",
                         "/",
                         ACCESS_TOKEN_EXPIRES_IN_SECONDS
                 );
@@ -774,8 +780,8 @@ public class AuthService {
                         response,
                         REFRESH_TOKEN_COOKIE,
                         (String) tokens.get("refresh_token"),
-                        "Lax",
-                        "/auth-service/",
+                        "Strict",
+                        "/",
                         REFRESH_TOKEN_EXPIRES_IN_SECONDS
                 );
                 return Map.of("message", "Login successful");
@@ -811,7 +817,7 @@ public class AuthService {
                     response,
                     ACCESS_TOKEN_COOKIE,
                     (String) tokens.get("access_token"),
-                    "Lax",
+                    "Strict",
                     "/",
                     ACCESS_TOKEN_EXPIRES_IN_SECONDS
             );
@@ -819,8 +825,8 @@ public class AuthService {
                     response,
                     REFRESH_TOKEN_COOKIE,
                     (String) tokens.get("refresh_token"),
-                    "Lax",
-                    "/auth-service/",
+                    "Strict",
+                    "/",
                     REFRESH_TOKEN_EXPIRES_IN_SECONDS
             );
             return Map.of("message", "Login successful");

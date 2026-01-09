@@ -15,7 +15,7 @@ public class CookieUtility {
                                          long maxAge) {
         ResponseCookie cookie = ResponseCookie.from(name, value)
                 .httpOnly(true)
-                //.secure(true)          // enable when HTTPS
+                .secure(true)          // enable when HTTPS
                 .sameSite(sameSite)
                 .path(path)
                 .maxAge(maxAge)
@@ -29,7 +29,7 @@ public class CookieUtility {
                                             String path) {
         ResponseCookie cookie = ResponseCookie.from(name, "")
                 .httpOnly(true)
-                //.secure(true)          // enable when HTTPS
+                .secure(true)          // enable when HTTPS
                 .sameSite(sameSite)
                 .path(path)
                 .maxAge(0)
